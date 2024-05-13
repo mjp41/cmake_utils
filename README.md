@@ -14,11 +14,17 @@ This allows the `FetchContent` to pull in the project without adding all its bui
 FetchContent_Declare(
     cmake_utils
     GIT_REPOSITORY https://github.com/mjp41/cmake_utils
-    GIT_TAG [[FILL THIS IN]]  
+    GIT_TAG [[FILL-THIS-IN]]  
     GIT_SHALLOW FALSE
 )
 
 FetchContent_MakeAvailable(cmake_utils)
 ```
 
-Replace `[[FILL THIS IS]]` with a SHA for the latest commit.  You should review what the CMake does.
+Replace `[[FILL-THIS-IN]]` with a SHA for the latest commit.  You should review what the CMake does.
+
+Your project can then use 
+```cmake
+FetchContent_MakeAvailable_ExcludeFromAll(your_project_dependency)
+```
+and not build all the targets it provides.
