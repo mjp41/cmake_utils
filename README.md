@@ -3,7 +3,7 @@ Useful bits for CMake
 
 ## FetchContent_MakeAvailable_ExcludeFromAll
 
-The `ExcludeFromAll` option to add_directory is super useful, but `FetchContent` does not support this until 3.28.  This cmake file provides a function based on
+The `EXCLUDE_FROM_ALL` option to add_directory is super useful, but `FetchContent` does not support this until 3.28.  This cmake file provides a function based on
 > [https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent](https://stackoverflow.com/questions/65527126/disable-install-for-fetchcontent)
 
 This allows the `FetchContent` to pull in the project without adding all its builds to the `all` target.
